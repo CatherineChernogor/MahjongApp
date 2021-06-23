@@ -1,66 +1,53 @@
 package com.example.mahjongapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Build;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
 public class MainActivity extends AppCompatActivity {
 
-    Button takePicture;
+    Button takePictureBtn;
     ImageView imageView;
-    static final int REQUEST_IMAGE_CAPTURE = 1;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestPermissions(new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
-        }
-
-        takePicture = findViewById(R.id.takePicture);
+        takePictureBtn = findViewById(R.id.takePictureBtn);
         imageView = findViewById(R.id.image);
+        context = getApplicationContext();
 
-        dispatchTakePictureIntent();
 
-
-//        todo: count score
-//        todo: draw ui
     }
 
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        try {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        } catch (ActivityNotFoundException e) {
-            Log.e("error", e.getMessage());
-        }
+    public void onClick(View v) {
+        openCarouselView();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            imageView.setImageBitmap(imageBitmap);
+    private void openCarouselView() {
+        Intent intent = new Intent(MainActivity.this, CarouselActivity.class);
 
-            predictClasses(imageBitmap);
-
-
-        }
+        startActivity(intent);
     }
 
-    private void predictClasses(Bitmap image) {
-//        todo: predict classes
-    }
 }
