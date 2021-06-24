@@ -10,8 +10,7 @@
         <ImageView
             android:id="@+id/list_picture"
             android:layout_width="70dp"
-            android:layout_height="100dp"
-            android:background="@drawable/chun" />
+            android:layout_height="100dp" />
 
         <TextView
             android:id="@+id/list_tile_name"
@@ -19,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="50dp"
-            android:layout_toRightOf="@+id/carousel_picture"
+            android:layout_toEndOf="@+id/list_picture"
             android:text="chun"
             android:textSize="24sp" />
     </RelativeLayout>

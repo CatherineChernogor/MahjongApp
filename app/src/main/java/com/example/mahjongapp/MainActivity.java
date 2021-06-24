@@ -2,29 +2,17 @@ package com.example.mahjongapp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.FileProvider;
-
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    Button takePictureBtn;
+    Button handModeBtn;
     ImageView imageView;
     Context context;
 
@@ -33,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        takePictureBtn = findViewById(R.id.takePictureBtn);
+        handModeBtn = findViewById(R.id.handModeBtn);
         imageView = findViewById(R.id.image);
         context = getApplicationContext();
 
@@ -41,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View v) {
-        openCarouselView();
+        if (v.getId() == R.id.handModeBtn)
+            openCarouselView();
     }
 
     private void openCarouselView() {

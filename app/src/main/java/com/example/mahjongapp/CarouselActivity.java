@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,9 +14,9 @@ import java.util.ArrayList;
 
 public class CarouselActivity extends AppCompatActivity implements CarouselViewHolder.OnTileListener {
 
-    ArrayList<Tile> selectedTiles;
-    ArrayList<Tile> carouselTiles;
-    int nSelectedTiles = 13;
+    ArrayList<Integer> selectedTileIds;
+    static ArrayList<Tile> carouselTiles;
+    int nSelectedTiles = 14;
     RecyclerView recyclerView;
     TextView statusTextView;
 
@@ -27,12 +26,27 @@ public class CarouselActivity extends AppCompatActivity implements CarouselViewH
         setContentView(R.layout.activity_carousel);
 
         carouselTiles = new ArrayList<>();
-        selectedTiles = new ArrayList<>();
+        selectedTileIds = new ArrayList<>();
+        selectedTileIds.add(4);
+        selectedTileIds.add(4);
+        selectedTileIds.add(4);
+        selectedTileIds.add(1);
+        selectedTileIds.add(1);
+        selectedTileIds.add(1);
+        selectedTileIds.add(2);
+        selectedTileIds.add(2);
+        selectedTileIds.add(2);
+        selectedTileIds.add(3);
+        selectedTileIds.add(3);
+        selectedTileIds.add(3);
+        selectedTileIds.add(0);
+
+
         loadCarouselTiles();
 
         recyclerView = findViewById(R.id.carousel);
         statusTextView = findViewById(R.id.text2);
-        statusTextView.setText(String.format("%s%s", 0, getString(R.string.text3)));
+        statusTextView.setText(String.format("%s%s", selectedTileIds.size(), getString(R.string.text3)));
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -96,13 +110,13 @@ public class CarouselActivity extends AppCompatActivity implements CarouselViewH
 
     @Override
     public void onTileClick(int position) {
-        if (selectedTiles.size() < nSelectedTiles) {
-            selectedTiles.add(carouselTiles.get(position));
-            statusTextView.setText(String.format("%s%s", selectedTiles.size(), getString(R.string.text3)));
-            if (selectedTiles.size() == nSelectedTiles) {
-                Log.d("mytag", "start new intent");
+        if (selectedTileIds.size() < nSelectedTiles) {
+            selectedTileIds.add(position);
+            statusTextView.setText(String.format("%s%s", selectedTileIds.size(), getString(R.string.text3)));
+
+            if (selectedTileIds.size() == nSelectedTiles) {
                 Intent intent = new Intent(CarouselActivity.this, CheckActivity.class);
-                intent.putExtra("selectedTiles", selectedTiles);
+                intent.putIntegerArrayListExtra("selectedTilesExtra", selectedTileIds);
 
                 startActivity(intent);
             }

@@ -2,7 +2,9 @@ package com.example.mahjongapp;
 
 import android.graphics.Bitmap;
 
-public class Tile {
+import java.io.Serializable;
+
+public class Tile implements Serializable {
 
     public String name;
     public Bitmap image;
@@ -11,4 +13,5 @@ public class Tile {
         this.name = name;
         this.image = image;
     }
+
 }

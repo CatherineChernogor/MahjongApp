@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">MahjongApp</string>
-    <string name="take_pic">Press to take a picture</string>
-    <string name="text3">/13 выбрано</string>
+    <string name="hand_mode">hand mode</string>
+    <string name="auto_mode">auto mode</string>
+    <string name="text3">/14 выбрано</string>
     <string name="text1">chose your tiles</string>
     <string name="choseTileBtn">выбрать</string>
 </resources>

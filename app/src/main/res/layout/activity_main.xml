@@ -7,34 +7,29 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-80dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/takePictureBtn"
+            android:id="@+id/handModeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:onClick="onClick"
-            android:text="@string/take_pic" />
+            android:text="@string/hand_mode" />
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="197dp"
-            android:layout_height="341dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="91dp"
-            android:layout_marginEnd="143dp"
-            android:layout_marginBottom="299dp"
-            android:maxWidth="20dp"
-            android:maxHeight="20dp"
-            app:srcCompat="@android:drawable/ic_notification_overlay" />
+        <Button
+            android:id="@+id/autoModeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/handModeBtn"
+            android:onClick="onClick"
+            android:text="@string/auto_mode" />
+
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
