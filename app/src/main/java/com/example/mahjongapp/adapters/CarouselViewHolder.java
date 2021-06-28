@@ -1,13 +1,15 @@
-package com.example.mahjongapp;
+package com.example.mahjongapp.adapters;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mahjongapp.R;
+import com.example.mahjongapp.data.Tile;
 
 public class CarouselViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     TextView textView;

@@ -1,5 +1,6 @@
-package com.example.mahjongapp;
+package com.example.mahjongapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,12 +8,17 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mahjongapp.Combinations;
+import com.example.mahjongapp.R;
+import com.example.mahjongapp.data.Tile;
+import com.example.mahjongapp.adapters.TileListAdapter;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CheckActivity extends AppCompatActivity {
 
-    ArrayList<Integer> selectedTileIds;
-    ArrayList<Tile> tiles;
+    static ArrayList<Integer> selectedTileIds;
 
     ListView listView;
     TileListAdapter adapter;
@@ -20,6 +26,7 @@ public class CheckActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_check);
 
         listView = findViewById(R.id.checkListView);
@@ -27,16 +34,18 @@ public class CheckActivity extends AppCompatActivity {
         selectedTileIds = new ArrayList<>();
         selectedTileIds = (ArrayList<Integer>) getIntent().getSerializableExtra("selectedTilesExtra");
 
-        tiles = new ArrayList<>();
-        for (int index : selectedTileIds) {
-            tiles.add(CarouselActivity.carouselTiles.get(index));
-        }
-
-        adapter = new TileListAdapter(this, tiles);
+        assert selectedTileIds != null;
+        adapter = new TileListAdapter(this, Combinations.convertToTileList(selectedTileIds));
         listView.setAdapter(adapter);
     }
 
     public void OnClick(View v) {
-        Log.d("mytag", "OnClick: count pairs");
+
+        Collections.sort(selectedTileIds);
+
+        Intent intent = new Intent(CheckActivity.this, CombinationsActivity.class);
+       // intent.putIntegerArrayListExtra("selectedTilesExtra", selectedTileIds);
+
+        startActivity(intent);
     }
 }

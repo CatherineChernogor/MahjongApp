@@ -24,7 +24,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
-            android:onClick="onClick"
-            android:text="посчитать" />
+            android:onClick="OnClick"
+            android:text="@string/text7" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

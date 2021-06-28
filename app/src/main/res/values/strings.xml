@@ -5,4 +5,8 @@
     <string name="text3">/14 выбрано</string>
     <string name="text1">chose your tiles</string>
     <string name="choseTileBtn">выбрать</string>
+    <string name="text4">found pairs</string>
+    <string name="text6">found chi</string>
+    <string name="text5">found pon</string>
+    <string name="text7">посчитать</string>
 </resources>

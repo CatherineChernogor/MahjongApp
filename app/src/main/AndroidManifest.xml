@@ -16,19 +16,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.CombinationsActivity"></activity>
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/file_paths" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CarouselActivity"></activity>
-        <activity android:name=".CheckActivity"></activity>
+        <activity android:name=".activities.CarouselActivity" />
+        <activity android:name=".activities.CheckActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -1,4 +1,4 @@
-package com.example.mahjongapp;
+package com.example.mahjongapp.activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -10,12 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mahjongapp.R;
+import com.example.mahjongapp.adapters.CarouselAdapter;
+import com.example.mahjongapp.adapters.CarouselViewHolder;
+import com.example.mahjongapp.data.Tile;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CarouselActivity extends AppCompatActivity implements CarouselViewHolder.OnTileListener {
 
+    public static ArrayList<Tile> carouselTiles;
+
     ArrayList<Integer> selectedTileIds;
-    static ArrayList<Tile> carouselTiles;
     int nSelectedTiles = 14;
     RecyclerView recyclerView;
     TextView statusTextView;
@@ -23,22 +31,23 @@ public class CarouselActivity extends AppCompatActivity implements CarouselViewH
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_carousel);
 
         carouselTiles = new ArrayList<>();
         selectedTileIds = new ArrayList<>();
-        selectedTileIds.add(4);
-        selectedTileIds.add(4);
-        selectedTileIds.add(4);
+        selectedTileIds.add(27);
+        selectedTileIds.add(28);
+        selectedTileIds.add(29);
         selectedTileIds.add(1);
         selectedTileIds.add(1);
         selectedTileIds.add(1);
-        selectedTileIds.add(2);
-        selectedTileIds.add(2);
-        selectedTileIds.add(2);
-        selectedTileIds.add(3);
-        selectedTileIds.add(3);
-        selectedTileIds.add(3);
+        selectedTileIds.add(20);
+        selectedTileIds.add(21);
+        selectedTileIds.add(22);
+        selectedTileIds.add(7);
+        selectedTileIds.add(8);
+        selectedTileIds.add(9);
         selectedTileIds.add(0);
 
 
@@ -105,7 +114,12 @@ public class CarouselActivity extends AppCompatActivity implements CarouselViewH
         carouselTiles.add(new Tile("pin8", loadBitmap(R.raw.pin8)));
         carouselTiles.add(new Tile("pin9", loadBitmap(R.raw.pin9)));
 
-
+        Collections.sort(carouselTiles, new Comparator<Tile>() {
+            @Override
+            public int compare(Tile tile, Tile t1) {
+                return Integer.compare(tile.id, t1.id);
+            }
+        });
     }
 
     @Override
@@ -115,6 +129,9 @@ public class CarouselActivity extends AppCompatActivity implements CarouselViewH
             statusTextView.setText(String.format("%s%s", selectedTileIds.size(), getString(R.string.text3)));
 
             if (selectedTileIds.size() == nSelectedTiles) {
+
+                Collections.sort(selectedTileIds);
+
                 Intent intent = new Intent(CarouselActivity.this, CheckActivity.class);
                 intent.putIntegerArrayListExtra("selectedTilesExtra", selectedTileIds);
 

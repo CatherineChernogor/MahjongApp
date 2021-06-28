@@ -1,0 +1,77 @@
+[
+  {
+    "name": "pinfu",
+    "openCost": 0,
+    "closeCost": 1
+  },
+  {
+    "name": "sanshoku",
+    "openCost": 1,
+    "closeCost": 2
+  },
+  {
+    "name": "ittsuu",
+    "openCost": 1,
+    "closeCost": 2
+  },
+  {
+    "name": "iipeikou",
+    "openCost": 0,
+    "closeCost": 1
+  },
+  {
+    "name": "ryanpeikou",
+    "openCost": 0,
+    "closeCost": 3
+  },
+  {
+    "name": "tanyao",
+    "openCost": 1,
+    "closeCost": 1
+  },
+  {
+    "name": "yakuhai",
+    "openCost": 1,
+    "closeCost": 1
+  },
+  {
+    "name": "chanta",
+    "openCost": 1,
+    "closeCost": 2
+  },
+  {
+    "name": "junchan",
+    "openCost": 2,
+    "closeCost": 3
+  },
+  {
+    "name": "honitsu",
+    "openCost": 2,
+    "closeCost": 3
+  },
+  {
+    "name": "chinitsu",
+    "openCost": 5,
+    "closeCost": 6
+  },
+  {
+    "name": "toitoi",
+    "openCost": 2,
+    "closeCost": 2
+  },
+  {
+    "name": "chitoitsu",
+    "openCost": 2,
+    "closeCost": 2
+  },
+  {
+    "name": "tsumo",
+    "openCost": 0,
+    "closeCost": 1
+  },
+  {
+    "name": "riichi",
+    "openCost": 0,
+    "closeCost": 1
+  }
+]

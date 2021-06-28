@@ -1,4 +1,4 @@
-package com.example.mahjongapp;
+package com.example.mahjongapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.mahjongapp.R;
+import com.example.mahjongapp.data.Tile;
 
 import java.util.ArrayList;
 

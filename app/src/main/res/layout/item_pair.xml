@@ -8,19 +8,27 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/list_picture"
+            android:id="@+id/pair_list_picture1"
             android:layout_width="50dp"
             android:layout_height="70dp"
             android:background="@drawable/chun" />
 
+        <ImageView
+            android:id="@+id/pair_list_picture2"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/pair_list_picture1"
+            android:background="@drawable/chun" />
+
         <TextView
-            android:id="@+id/list_tile_name"
+            android:id="@+id/pair_list_tile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="30dp"
-            android:layout_toEndOf="@+id/list_picture"
-            android:text="chun"
+            android:layout_toEndOf="@+id/pair_list_picture2"
+            android:text="chun pair"
             android:textSize="24sp" />
     </RelativeLayout>
 </RelativeLayout>

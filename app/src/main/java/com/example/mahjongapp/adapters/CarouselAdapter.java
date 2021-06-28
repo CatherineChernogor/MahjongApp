@@ -1,4 +1,4 @@
-package com.example.mahjongapp;
+package com.example.mahjongapp.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +8,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
+import com.example.mahjongapp.R;
+import com.example.mahjongapp.data.Tile;
+
 public class CarouselAdapter extends ListAdapter<Tile, CarouselViewHolder> {
     LayoutInflater inflater;
     CarouselViewHolder.OnTileListener mOnTileListener;
 
-    protected CarouselAdapter(LayoutInflater inflater, CarouselViewHolder.OnTileListener onTileListener) {
+    public CarouselAdapter(LayoutInflater inflater, CarouselViewHolder.OnTileListener onTileListener) {
         super(DIFF_CALLBACK); // задаём специальный объект-сравниватель
         this.inflater = inflater;
         this.mOnTileListener = onTileListener;
