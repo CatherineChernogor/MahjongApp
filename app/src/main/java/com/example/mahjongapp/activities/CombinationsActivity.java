@@ -2,12 +2,15 @@ package com.example.mahjongapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
+import android.view.View;
 import android.widget.ListView;
 
 import com.example.mahjongapp.Combinations;
 import com.example.mahjongapp.R;
+import com.example.mahjongapp.Score;
 import com.example.mahjongapp.adapters.PairTileListAdapter;
 import com.example.mahjongapp.adapters.TileListAdapter;
 import com.example.mahjongapp.adapters.TripleTileListAdapter;
@@ -25,6 +28,8 @@ public class CombinationsActivity extends AppCompatActivity {
     PairTileListAdapter pairAdapter;
     TripleTileListAdapter ponAdapter;
     TripleTileListAdapter chiAdapter;
+
+    Score score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,5 +55,23 @@ public class CombinationsActivity extends AppCompatActivity {
         ponListView.setAdapter(ponAdapter);
         chiListView.setAdapter(chiAdapter);
 
+
+        score = new Score(cmb, this);
+
+
+    }
+
+    public void onClick(View v) {
+        Intent intent = new Intent(CombinationsActivity.this, ScoreActivity.class);
+
+        score.searchForYaku();
+
+
+        String yakuStr = score.foundYaku.get(0).name;
+        int hanAmount = score.foundYaku.get(0).openCost;
+        intent.putExtra("found_yaku", yakuStr);
+        intent.putExtra("han_amount", hanAmount);
+
+        startActivity(intent);
     }
 }

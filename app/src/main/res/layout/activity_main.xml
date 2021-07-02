@@ -19,6 +19,7 @@
             android:id="@+id/handModeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:width="250dp"
             android:onClick="onClick"
             android:text="@string/hand_mode" />
 
@@ -27,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/handModeBtn"
+            android:width="250dp"
             android:onClick="onClick"
             android:text="@string/auto_mode" />
 

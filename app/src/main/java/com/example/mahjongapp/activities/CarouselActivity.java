@@ -36,19 +36,19 @@ public class CarouselActivity extends AppCompatActivity implements CarouselViewH
 
         carouselTiles = new ArrayList<>();
         selectedTileIds = new ArrayList<>();
-        selectedTileIds.add(27);
-        selectedTileIds.add(28);
-        selectedTileIds.add(29);
-        selectedTileIds.add(1);
-        selectedTileIds.add(1);
-        selectedTileIds.add(1);
-        selectedTileIds.add(20);
-        selectedTileIds.add(21);
-        selectedTileIds.add(22);
-        selectedTileIds.add(7);
-        selectedTileIds.add(8);
-        selectedTileIds.add(9);
-        selectedTileIds.add(0);
+//        selectedTileIds.add(27);
+//        selectedTileIds.add(28);
+//        selectedTileIds.add(29);
+//        selectedTileIds.add(1);
+//        selectedTileIds.add(1);
+//        selectedTileIds.add(1);
+//        selectedTileIds.add(20);
+//        selectedTileIds.add(21);
+//        selectedTileIds.add(22);
+//        selectedTileIds.add(7);
+//        selectedTileIds.add(8);
+//        selectedTileIds.add(9);
+//        selectedTileIds.add(0);
 
 
         loadCarouselTiles();

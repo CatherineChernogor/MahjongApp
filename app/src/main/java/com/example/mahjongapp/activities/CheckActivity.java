@@ -39,13 +39,18 @@ public class CheckActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
 
-    public void OnClick(View v) {
+    public void onClick(View v) {
+        if (v.getId() == R.id.GoBackBtn) {
+            Intent intent = new Intent(CheckActivity.this, CarouselActivity.class);
+            startActivity(intent);
+        } else {
 
-        Collections.sort(selectedTileIds);
+            Collections.sort(selectedTileIds);
 
-        Intent intent = new Intent(CheckActivity.this, CombinationsActivity.class);
-       // intent.putIntegerArrayListExtra("selectedTilesExtra", selectedTileIds);
+            Intent intent = new Intent(CheckActivity.this, CombinationsActivity.class);
+            // intent.putIntegerArrayListExtra("selectedTilesExtra", selectedTileIds);
 
-        startActivity(intent);
+            startActivity(intent);
+        }
     }
 }

@@ -1,12 +1,18 @@
 <resources>
     <string name="app_name">MahjongApp</string>
-    <string name="hand_mode">hand mode</string>
-    <string name="auto_mode">auto mode</string>
+    <string name="hand_mode">Ручной режим</string>
+    <string name="auto_mode">Автоматический режим</string>
+    <string name="text1">Выберите ваши тайлы</string>
+    <string name="text2">выбрать</string>
     <string name="text3">/14 выбрано</string>
-    <string name="text1">chose your tiles</string>
-    <string name="choseTileBtn">выбрать</string>
-    <string name="text4">found pairs</string>
-    <string name="text6">found chi</string>
-    <string name="text5">found pon</string>
-    <string name="text7">посчитать</string>
+    <string name="text4">Пары</string>
+    <string name="text5">Поны</string>
+    <string name="text6">Чи</string>
+    <string name="text7">найти комбинации</string>
+    <string name="go_back">начать заново</string>
+    <string name="count_score">посчитать очки</string>
+    <string name="found_yaku">Найденные яку: </string>
+    <string name="han_amount">Количество хан: </string>
+    <string name="found_combinations">Найденые комбинации</string>
+    <string name="result">Результат</string>
 </resources>

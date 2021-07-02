@@ -8,13 +8,24 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/found_combinations"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/text4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/text4" />
+            android:layout_below="@+id/textView"
+            android:text="@string/text4"
+            android:textSize="18sp" />
 
         <ListView
             android:id="@+id/pairList"
@@ -27,7 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/pairList"
-            android:text="@string/text5" />
+            android:text="@string/text5"
+            android:textSize="18sp" />
 
         <ListView
             android:id="@+id/ponList"
@@ -41,13 +53,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ponList"
-            android:text="@string/text6" />
+            android:text="@string/text6"
+            android:textSize="18sp" />
 
         <ListView
             android:id="@+id/chiList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text6" />
+
+        <Button
+            android:id="@+id/scoreBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chiList"
+            android:layout_centerHorizontal="true"
+            android:onClick="onClick"
+            android:text="@string/count_score" />
+
 
     </RelativeLayout>
 

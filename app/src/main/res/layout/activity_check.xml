@@ -16,15 +16,29 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="65dp" />
 
-
-        <Button
-            android:id="@+id/findCombinationBtn"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="5dp"
-            android:onClick="OnClick"
-            android:text="@string/text7" />
+            android:layout_marginBottom="5dp">
+
+            <Button
+                android:id="@+id/findCombinationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/text7" />
+
+            <Button
+                android:id="@+id/GoBackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_toEndOf="@id/findCombinationBtn"
+                android:onClick="onClick"
+                android:text="@string/go_back" />
+        </RelativeLayout>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
